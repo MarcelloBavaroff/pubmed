@@ -11,5 +11,12 @@ def extract(filename):
 
 
 #extract("pubmed23n0001.xml")
-subprocess.run(["extractTIABs.py", "xml/pubmed23n0001.xml"], shell=True)
+#subprocess.run(["python", "extractTIABs.py", "xml/pubmed23n0001.xml"], shell=True)
+
+directory = r'C:\Users\marce\PycharmProjects\pubmed\texts'
+
+for filename in os.listdir(directory):
+    f = os.path.join(directory, filename)
+    if os.path.isfile(f) and filename.endswith('.txt'):
+        print(f)
 
